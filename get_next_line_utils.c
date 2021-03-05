@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:22:07 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/04 22:55:42 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/05 14:01:25 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 
     count = 0;
     while (count < n)
-        ((unsigned char *)dst)[count++] = ((unsigned char *)src)[count++];
+    {
+	    ((unsigned char *)dst)[count] = ((unsigned char *)src)[count];
+		count++;
+	}
     return (dst);
 }
 

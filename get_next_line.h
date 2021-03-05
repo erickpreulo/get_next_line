@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:18:53 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/04 22:56:18 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/05 15:51:49 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
+
+#define BUFFERSIZE 10
 
 int         get_next_line(int fd, char **line);
 size_t      ft_strlen(const char *str);
