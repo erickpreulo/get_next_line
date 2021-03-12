@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 19:13:18 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 13:46:28 by egomes           ###   ########.fr       */
+/*   Created: 2021/03/11 18:40:37 by egomes            #+#    #+#             */
+/*   Updated: 2021/03/11 18:51:01 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int    endline(char *str)
 {
@@ -51,27 +51,27 @@ int     get_next_line(int fd, char **line)
 {
     int r;
     char *buff;
-    static char *new;
+    static char *new[4096];
 
     if (!(buff = ft_newstr(BUFFER_SIZE)))
         return (-1);
     if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
-    if (!new && !(new = ft_newstr(0)))
+    if (!new[fd] && !(new[fd] = ft_newstr(0)))
         return (-1);
     r = 1;
-    while (!endline(new) && (r = read(fd, buff, BUFFER_SIZE)) != 0)
+    while (!endline(new[fd]) && (r = read(fd, buff, BUFFER_SIZE)) != 0)
     {
         if (r == -1)
         {
-            free(new);
+            free(new[fd]);
             return (-1);
         }
         buff[r] = '\0';
-        new = ft_strjoin(new, buff);
+        new[fd] = ft_strjoin(new[fd], buff);
     }
     free(buff);
-    *line = get_line(new);
-    new = newline(new);
+    *line = get_line(new[fd]);
+    new[fd] = newline(new[fd]);
     return (r == 0 ? 0 : 1);
 }

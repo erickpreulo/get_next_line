@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:43:02 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 13:46:27 by egomes           ###   ########.fr       */
+/*   Created: 2021/03/11 18:39:16 by egomes            #+#    #+#             */
+/*   Updated: 2021/03/11 18:46:15 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t     ft_strlen(const char *str)
 {

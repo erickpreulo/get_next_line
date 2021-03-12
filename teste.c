@@ -6,21 +6,33 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 10:46:17 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/05 15:51:05 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/11 18:50:05 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line_bonus.h"
 #include "get_next_line.h"
 
 int     main(int argc, char **argv)
 {
     int fd;
     char *line;
-    (void)argv;
+    int ret;
+    int i;
     
-    if (argc != 2)
-        printf("Erro no numero de argumentos\n");
-    fd = open(argv[1], O_RDONLY);
-    get_next_line(fd, &line);
-    //printf("Linha: %s\n", line);
+    if (argc < 1)
+        printf("erro no numero de argumentos.");
+    i = 1;
+    while (argv[i])
+    {
+        fd = open(argv[i], O_RDONLY);
+        ret = 1;
+        while (ret > 0)
+        {
+            ret = get_next_line(fd, &line);
+            printf("[%d] %s\n", ret, line);
+            free(line);
+        }
+        i++;
+    }
 }

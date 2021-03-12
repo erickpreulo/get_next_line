@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 19:18:53 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 13:33:56 by egomes           ###   ########.fr       */
+/*   Created: 2021/03/11 18:40:05 by egomes            #+#    #+#             */
+/*   Updated: 2021/03/11 18:48:44 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+#define GET_NEXT_LINE_BONUS_H
 
 #include <unistd.h>
 #include <stdio.h>

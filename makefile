@@ -6,7 +6,7 @@
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/03 10:48:39 by egomes            #+#    #+#              #
-#    Updated: 2021/03/05 15:54:49 by egomes           ###   ########.fr        #
+#    Updated: 2021/03/11 18:53:30 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = nextline.a
 
 CC	= gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1195858
 
 AR		= ar rc
 
@@ -33,19 +33,16 @@ $(NAME):
 		@$(CC) $(CFLAGS) -c $(SRC)
 		@$(AR) $(NAME) $(OBJ)
 		@$(RANLIB) $(NAME)
-		@echo ".a criado"
 all:		$(NAME)
 
 clean: 
 	@rm -f $(OBJ) teste.o ./a.out
-	@echo "Objetos removidos!"
 
-test:	$(NAME)
-		@$(CC) $(CFLAGS) teste.c $(NAME)
-		@./a.out teste.txt
+test:	re
+		@$(CC) $(CFLAGS) teste.c $(NAME) -fsanitize=address -g
+		@./a.out teste.txt texte2.txt
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) removido!"
 
 re: fclean all

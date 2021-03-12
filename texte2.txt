@@ -1,0 +1,4 @@
+• Para ter sucesso em get_next_line com uma única variável estática.
+• Ser capaz de gerenciar vários descritores de arquivo com seu get_next_line. Por exemplo, se os descritores de arquivo 3, 4 e 5 são acessíveis para leitura, você pode chamar
+get_next_line uma vez em 3, uma vez em 4, mais uma vez em 3 e uma vez em 5 etc. sem
+perder o fio de leitura em cada um dos descritores. 
