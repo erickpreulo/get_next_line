@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:40:05 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 18:48:44 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/13 08:22:24 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int         get_next_line(int fd, char **line);
 size_t      ft_strlen(const char *str);
-char	    *ft_strjoin(char const *s1, char const *s2);
+char	    *ft_strjoin(char *s1, char *s2);
 int         endline(char *str);
 char	    *ft_newstr(size_t size);
 char        *get_line(char *str);

@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:39:16 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 18:46:15 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/13 08:22:42 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t     ft_strlen_line(const char *str)
     return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new_str;
 	int		i;
@@ -63,26 +63,4 @@ char	*ft_newstr(size_t size)
 		return (NULL);
 	str[size] = '\0';
 	return (str);
-}
-
-char    *newline(char *str)
-{
-    int i;
-    int j;
-    char *res;
-
-    i = ft_strlen_line(str);
-    if(!str || !(res = ft_newstr(ft_strlen(str) - i)))
-    {
-        free(str);
-        return (NULL);
-    }
-    i++;
-    j = 0;
-    while (str[i])
-        res[j++] = str[i++];
-    res[j] = '\0';
-    free(str);
-    str = NULL;
-    return (res);
 }

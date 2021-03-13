@@ -6,7 +6,7 @@
 #    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/03 10:48:39 by egomes            #+#    #+#              #
-#    Updated: 2021/03/11 18:53:30 by egomes           ###   ########.fr        #
+#    Updated: 2021/03/13 01:09:41 by egomes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = nextline.a
 
 CC	= gcc
 
-CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=1195858
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=100000
 
 AR		= ar rc
 

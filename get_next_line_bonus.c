@@ -6,7 +6,7 @@
 /*   By: egomes <egomes@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:40:37 by egomes            #+#    #+#             */
-/*   Updated: 2021/03/11 18:51:01 by egomes           ###   ########.fr       */
+/*   Updated: 2021/03/13 08:30:45 by egomes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,31 @@ char    *get_line(char *str)
     return (res);
 }
 
+char    *newline(char *str)
+{
+	char	*result;
+	int		i;
+	int		j;
+
+	if (!str)
+		return (NULL);
+	i = ft_strlen_line(str);
+	if (!str[i])
+	{
+		free(str);
+		return (NULL);
+	}
+	if (!(result = ft_newstr(ft_strlen(str) - i)))
+		return (NULL);
+	i++;
+	j = 0;
+	while (str[i])
+		result[j++] = str[i++];
+	result[j] = '\0';
+	free(str);
+	return (result);
+}
+
 int     get_next_line(int fd, char **line)
 {
     int r;
@@ -55,8 +80,11 @@ int     get_next_line(int fd, char **line)
 
     if (!(buff = ft_newstr(BUFFER_SIZE)))
         return (-1);
-    if (fd < 0 || !line || BUFFER_SIZE <= 0)
-		return (-1);
+    if (fd < 0 || !line || BUFFER_SIZE <= 0 || read(fd, buff, 0) < 0)
+    {
+        free(buff);
+        return (-1);
+    }
     if (!new[fd] && !(new[fd] = ft_newstr(0)))
         return (-1);
     r = 1;
